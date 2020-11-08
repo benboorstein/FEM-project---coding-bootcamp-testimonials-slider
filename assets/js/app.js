@@ -9,7 +9,6 @@ function goToSecondPage() {
 }
 
 
-// DOES ALL THIS BELOW REALLY NEED TO BE SPELLED OUT JUST as much as above, given that what's below is just what's already in the HTML?
 document.querySelector('.prev-arrow').addEventListener('click', goToFirstPage);
 
 function goToFirstPage() {
