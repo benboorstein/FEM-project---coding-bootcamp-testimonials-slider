@@ -8,15 +8,13 @@
 
       <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-      <link rel="stylesheet" href="./assets/css/style.css"> <!-- ./ means "from right here". ../ means "go up a level". -->
-
-      <!-- AND FROM A SITE:
+      <link rel="stylesheet" href="./assets/css/style.css">
+      <!-- ./ means "from right here". ../ means "go up a level". And, from a site:
         Here is all you need to know about relative file paths:
           Starting with “/” returns to the root directory and starts there
           Starting with “../” moves one directory backwards and starts there
           Starting with “../../” moves two directories backwards and starts there (and so on…)
-          To move forward, just start with the first subdirectory and keep moving forward
-      -->
+          To move forward, just start with the first subdirectory and keep moving forward -->
 
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
       
@@ -25,26 +23,30 @@
 
     <body>
 
-      <div>
-        <img class="john-pic" src="./assets/img/image-john.jpg" alt="Picture of John">
+      <main>
 
-        <img class="prev-arrow" src="./assets/img/icon-prev.svg" alt="Previous Arrow">
+        <div>
+          <img class="john-pic" src="./assets/img/image-john.jpg" alt="Picture of John">
 
-        <img class="next-arrow" src="./assets/img/icon-next.svg" alt="Next Arrow">
-      </div>
+          <!-- <img class="prev-arrow" src="./assets/img/icon-prev.svg" alt="Previous Arrow"> -->
 
-      <blockquote>
-        <p class="quotation">
-          “ If you want to lay the best foundation possible I’d recommend taking this course. 
-          The depth the instructors go into is incredible. I now feel so confident about 
-          starting up as a professional developer. ”
-        </p>
-    
-        <p class="quotation-attribution">
-          <span>John Tarkpor</span>&nbsp;
-          <span>Junior Front-end Developer</span>
-        </p>
-      </blockquote>
+          <!-- <img class="next-arrow" src="./assets/img/icon-next.svg" alt="Next Arrow"> -->
+        </div>
+
+        <blockquote>
+          <p class="quotation">
+            “ If you want to lay the best foundation possible I’d recommend taking this course. 
+            The depth the instructors go into is incredible. I now feel so confident about 
+            starting up as a professional developer. ”
+          </p>
+      
+          <p class="quotation-attribution">
+            <span>John Tarkpor</span>&nbsp;
+            <span>Junior Front-end Developer</span>
+          </p>
+        </blockquote>
+
+      </main>
       
       <!-- <footer>
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
