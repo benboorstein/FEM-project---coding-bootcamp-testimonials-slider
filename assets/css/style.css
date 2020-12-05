@@ -24,7 +24,6 @@ div {
     background-position: 48.5% 89%;
     background-attachment: scroll;
     padding-bottom: 20px;
-    /*PROBLEM: Whether for now or later: As of now, the background image MOVES LEFT (or the pic moves right) as the viewport widens.*/
 } 
 
 .john-pic {
@@ -75,7 +74,6 @@ blockquote {
     margin-left: 15%;
     margin-right: 15%;
     padding-top: 23px;
-    
 }
 
 .quotation-attribution {
@@ -92,21 +90,109 @@ blockquote {
     color: hsl(240, 18%, 77%);
 }
 
-footer { /*LEFT OFF HERE*/
+footer {
     text-align: center; 
     font-size: 11px;
 }
 
 footer a {
-    color: hsl(228, 93%, 55%); hsl(hue, saturation, lightness)
+    color: hsl(228, 93%, 55%); /*hsl(hue, saturation, lightness)*/
 }
 
+/****************************************
+****************************************/
 
+/*
+...I already deleted lines from above that I won't need.
+...Uncommented out means set already, although may need to be altered a bit.
+...Commented out means need to fix.
+...Then there will be new (i.e., not from above) things I need to add.
+*/
 
-
-
-@media screen and (min-width: 800px) { /* starting at width of 800px, the below will take effect.*/
+@media screen and (min-width: 862px) { /* starting at width of 862px, the below will take effect.*/
+    
     body {
-        /* background: teal; */
+        background-size: 600px 151px;  /*.252*/
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        text-align: left;
+    }
+
+    div {
+        background-size: 605px 570.2px;  /*.94261*/
+        background-position: 17% 35%;
+        padding: 67px 75px 67px 77px;
+        margin: 0 25px 0 0;
+    }
+
+    .john-pic {
+        width: 465px;
+        height: 469px;
+        margin: auto;
+        margin-right: 90px;
+    }
+    
+    .prev-arrow {
+        /* margin: -10px auto 0 45.5%; */
+        /* width: 8px; */
+        /* height: 12px; */
+    }
+    
+    .next-arrow {
+        /* margin: -12px auto 0 54.5%; */
+        /* width: 8px; */
+        /* height: 12px; */
+    }
+
+/********************* LEFT OFF HERE - can't figure out how to make the text go OVER the pic and background image. It seems "order: -1" on <blockquote> reversed the order of <blockquote> and <div> such that <blockquote> is now considered ABOVE <div> and therefore the contents of <div> go OVER those of <blockquote>. */
+
+    blockquote {
+        background-size: 112px 93.5px; /*.8333*/     
+        background-position: left center;
+        margin: 0 0 0 180px;
+        order: -1;
+    }
+
+    .quotation { 
+        font-size: 185%;
+        margin: 0 -140px 0 0; /* Trying negative margin on the right to get the text to move right. Before messing with it, it was 0. */
+    }
+    
+    .quotation-attribution { 
+        font-size: 110%;
+    }
+
+    .quotation-attribution span:nth-child(1) {
+        display: inline;
+    }
+    
+    footer { 
+        /* font-size: 11px; */
     }
 }
+
+
+
+
+
+/* KEEP THIS AS A REFERENCE:
+parent {
+    display: flex;    mandatory 
+    flex-direction: ;    row (default) | row-reverse | column | column-reverse 
+    justify-content: ;    flex-start (default) | flex-end | center | space-between | space-around | space-evenly 
+    align-items: ;    flex-start | flex-end | center | (baseline) | stretch (default) 
+    flex-wrap: ;    nowrap (default) | wrap | wrap-reverse 
+    align-content: ;    flex-start | flex-end | center | space-between | space-around | stretch (default) 
+}
+
+child {
+    align-self: ;    flex-start | flex-end | center | (baseline) | stretch (default)
+    flex-grow: ;    0 is default 
+    flex-shrink: ;    1 is default 
+    flex-basis: ;    auto is default 
+    order: ;    0 is default 
+}
+*/
