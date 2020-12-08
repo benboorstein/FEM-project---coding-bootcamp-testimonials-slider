@@ -14,6 +14,8 @@ body {
 }
 
 main {
+    display: flex; /* added to help "stick" footer to bottom of page */
+    flex-direction: column; /* added to help "stick" footer to bottom of page */
     text-align: center;
 }
 
@@ -24,6 +26,8 @@ div {
     background-position: 48.5% 89%;
     background-attachment: scroll;
     padding-bottom: 20px;
+    display: flex; /* To help make the whole white arrow blob appear on top of the pic. */
+    flex-direction: column;  /* To help make the whole white arrow blob appear on top of the pic. */
 } 
 
 .john-pic {
@@ -42,19 +46,35 @@ div {
 }
 
 .prev-arrow {
-    margin: -10px auto 0 45.5%;
+    margin: -6px auto 0 45.5%;
     display: flex;
     cursor: pointer;
     width: 8px;
     height: 12px;
+    border-radius: 25px 0px 0px 25px;
+    box-shadow:
+            -2px 0px 0px 13px rgba(255, 255, 255, 1.0),
+            16px 0px 0px 13px rgba(255, 255, 255, 1.0),
+            23px 0px 0px 13px rgba(255, 255, 255, 1.0),
+            0px 0px 0px 8px rgba(255, 255, 255, 1.0) inset,
+            3px 16px 10px 16px rgba(109, 42, 255, 0.07),
+            17px 13px 10px 16px rgba(109, 42, 255, 0.07),
+            31px 14px 10px 15px rgba(109, 42, 255, 0.07); 
 }
 
 .next-arrow {
-    margin: -12px auto 0 54.5%;
+    margin: -12px auto 0 52.5%;
     display: flex;
     cursor: pointer;
     width: 8px;
     height: 12px;
+    border-radius: 0px 25px 25px 0px;
+    box-shadow:
+            2px 0px 0px 13px rgba(255, 255, 255, 1.0),
+            -4px 0px 0px 13px rgba(255, 255, 255, 1.0),
+            -13px 0px 0px 13px rgba(255, 255, 255, 1.0),
+            0px 0px 0px 8px rgba(255, 255, 255, 1.0) inset,
+            -1px 14px 10px 16px rgba(109, 42, 255, 0.07); 
 }
 
 blockquote {
@@ -73,11 +93,12 @@ blockquote {
     font-weight: 300;
     margin-left: 15%;
     margin-right: 15%;
-    padding-top: 23px;
+    padding-top: 6px;
 }
 
 .quotation-attribution {
     font-size: 85%;
+    margin-bottom: 30px;
 }
 
 .quotation-attribution span:nth-child(1) {
@@ -102,13 +123,6 @@ footer a {
 /****************************************
 ****************************************/
 
-/*
-...I already deleted lines from above that I won't need.
-...Uncommented out means set already, although may need to be altered a bit.
-...Commented out means need to fix.
-...Then there will be new (i.e., not from above) things I need to add.
-*/
-
 @media screen and (min-width: 862px) { /* starting at width of 862px, the below will take effect.*/
     
     body {
@@ -117,6 +131,7 @@ footer a {
 
     main {
         display: flex;
+        flex-direction: row-reverse;
         align-items: center;
         text-align: left;
     }
@@ -134,43 +149,41 @@ footer a {
         margin: auto;
         margin-right: 90px;
     }
-    
+
     .prev-arrow {
-        /* margin: -10px auto 0 45.5%; */
-        /* width: 8px; */
-        /* height: 12px; */
+        margin: -8px auto 0 12%;
+        cursor: pointer;
+        width: 10px;
+        height: 15px;
     }
     
     .next-arrow {
-        /* margin: -12px auto 0 54.5%; */
-        /* width: 8px; */
-        /* height: 12px; */
+        margin: -15px auto 0 22%;
+        cursor: pointer;
+        width: 10px;
+        height: 15px;
     }
-
-/********************* LEFT OFF HERE - can't figure out how to make the text go OVER the pic and background image. It seems "order: -1" on <blockquote> reversed the order of <blockquote> and <div> such that <blockquote> is now considered ABOVE <div> and therefore the contents of <div> go OVER those of <blockquote>. */
 
     blockquote {
         background-size: 112px 93.5px; /*.8333*/     
-        background-position: left center;
-        margin: 0 0 0 180px;
-        order: -1;
+        background-position: 26% 0%;
+        margin: 0 0 20px 180px;
+        padding-top: 39px;
     }
 
     .quotation { 
         font-size: 185%;
-        margin: 0 -140px 0 0; /* Trying negative margin on the right to get the text to move right. Before messing with it, it was 0. */
+        margin: 0 -140px 0 0;
+        padding-top: 23px;
     }
     
     .quotation-attribution { 
         font-size: 110%;
+        margin-bottom: 0;
     }
 
     .quotation-attribution span:nth-child(1) {
         display: inline;
-    }
-    
-    footer { 
-        /* font-size: 11px; */
     }
 }
 
