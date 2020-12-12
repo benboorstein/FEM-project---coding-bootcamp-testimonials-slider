@@ -1,42 +1,53 @@
+/* may need to draw from:
+testimonials[0].quote = document.querySelector('.quotation').innerText;
+testimonials[0].quoteAttrName = document.getElementsByTagName('span')[0].innerText; 
+testimonials[0].quoteAttrPosition = document.getElementsByTagName('span')[1].innerText;
+testimonials[0].pic = document.querySelector('.john-pic').src;
+testimonials[0].picAlt = document.querySelector('.john-pic').alt;
 
-// creating variables for each aspect of the page that changes when an arrow is clicked
-const johnQuotation = document.querySelector('.quotation').innerText = '“ If you want to lay the best foundation possible I\’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”';
-const tanyaQuotation = document.querySelector('.quotation').innerText = '“ I\’ve been interested in coding for a while but never taken the jump, until now. I couldn\’t recommend this course enough. I\’m now in the job of my dreams and so excited about the future. ”';
+testimonials[1].quote = document.querySelector('.quotation').innerText;
+testimonials[1].quoteAttrName = document.getElementsByTagName('span')[0].innerText;
+testimonials[1].quoteAttrPosition = document.getElementsByTagName('span')[1].innerText;
+testimonials[1].pic = document.querySelector('.john-pic').src;
+testimonials[1].picAlt = document.querySelector('.john-pic').alt;
+*/
 
-const johnQuotationAttribution = document.getElementsByTagName('span')[0].innerText = 'John Tarkpor';
-const tanyaQuotationAttribution = document.getElementsByTagName('span')[0].innerText = 'Tanya Sinclair';
+const testimonials = [
+    { // John
+        quote: '“ If you want to lay the best foundation possible I\’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”',
+        quoteAttrName: 'John Tarkpor',
+        quoteAttrPosition: 'Junior Front-end Developer',
+        pic: './assets/img/image-john.jpg',
+        picAlt: 'Picture of John'
+    },
+    { // Tanya
+        quote: '“ I\’ve been interested in coding for a while but never taken the jump, until now. I couldn\’t recommend this course enough. I\’m now in the job of my dreams and so excited about the future. ”',
+        quoteAttrName: 'Tanya Sinclair',
+        quoteAttrPosition: 'UX Engineer',
+        pic: './assets/img/image-tanya.jpg',
+        picAlt: 'Picture of Tanya'
+    }
+];
 
-const johnPosition = document.getElementsByTagName('span')[1].innerText = 'Junior Front-end Developer';
-const tanyaPosition = document.getElementsByTagName('span')[1].innerText = 'UX Engineer';
-
-const johnPic = document.querySelector('.john-pic').src = './assets/img/image-john.jpg';
-const tanyaPic = document.querySelector('.john-pic').src = './assets/img/image-tanya.jpg';
-
-const johnPicAlt = document.querySelector('.john-pic').alt = 'Picture of John';
-const tanyaPicAlt = document.querySelector('.john-pic').alt = 'Picture of Tanya';
-
-// putting the above variables into arrays
-const quotation = [johnQuotation, tanyaQuotation];
-const quotationAttributionName = [johnQuotationAttribution, tanyaQuotationAttribution];
-const quotationAttributionPosition = [johnPosition, tanyaPosition];
-const pic = [johnPic, tanyaPic];
-const picAlt = [johnPicAlt, tanyaPicAlt];
-
-// establishing what each of the (in this case only two) pages consists of
-const johnPage = [quotation[0], quotationAttributionName[0], quotationAttributionPosition[0], pic[0], picAlt[0]];
-const tanyaPage = [quotation[1], quotationAttributionName[1], quotationAttributionPosition[1], pic[1], picAlt[1]];
+let currentPage = 0;
 
 document.querySelector('.next-arrow').addEventListener('click', goToNextPage);
 
-function goToNextPage() {
-    if (johnPage) {
-        tanyaPage;
-    } else if (tanyaPage) {
-        johnPage;
-    }
+function goToNextPage(num) {
+    num = 1;
+    testimonials[0];
+    // currentPage = num;
+    // currentPage = testimonials[0];
 }
 
-goToNextPage();
+document.querySelector('.prev-arrow').addEventListener('click', goToPrevPage);
+
+function goToPrevPage(num) {
+    num = -1;
+    testimonials[1];
+    // currentPage = num;
+    // currentPage = testimonials[1];
+}
 
 
 
@@ -56,23 +67,6 @@ goToNextPage();
 
 
 
-
-
-
-
-
-
-// PROBABLY BAD, BUT SAVE FOR NOW:
-// function testimonialsSlider(quotationList, qANameList, qAPositionList, picList, picAltList) {
-//   // Create a new testimonals slider from our lists
-//   let randName = listOfNames[Math.floor(Math.random() * listOfNames.length)];
-//   let randVerb = listOfVerbs[Math.floor(Math.random() * listOfVerbs.length)];
-//   let randThing = listOfThings[Math.floor(Math.random() * listOfThings.length)];
-
-//   document.getElementById('madlibs').textContent = `${randName} ${randVerb} about the ${randThing}`;
-// }
-
-// testimonialsSlider(quotation, quotationAttributionName, quotationAttributionPosition, pic, picAlt);
 
 
 
